@@ -5,9 +5,20 @@
     <link rel="stylesheet" type="text/css"  href="{% static 'css/style.css' %}" >
   </head>
   <body>
-    <h2>
-      Image static file
-    </h2>
-    <img src="{% static 'images/download.jpg' %}">
+    <h2>Website list</h2>
+    <table>
+      <thead>
+        <th>Website</th>
+        <th>Date accessed</th>
+      </thead>
+      <tbody>
+        {% for records in access_record %}
+        <tr>
+          <td>{{records.name}} </td>
+          <td>{{records.date}} </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </body>
 </html>
